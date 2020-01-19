@@ -1,0 +1,24 @@
+mkdir C:\django				// create directory
+cd C:\django				
+pip install virtualenv			// install environment
+virtualenv .				// create environment
+.\Scripts\activate			// activate environment
+mkdir django_app			// create project directory
+cd django_app				// moves to the django_app
+pip install django			// install django files
+pip freeze				// show versions
+django-admin.py startproject todo	// project name todo
+python manage.py migrate		// for migrating
+python manage.py startapp todo_list	// todo_list is a app in todo project
+
+		After
+1. go to todo_list make new folder of (urls,templates)
+2. go to todo main project
+todo->urls->> urlpatterns=[... , path('', include('todo_list.urls')),] // here include the app urls
+todo->settings.py->> INSTALLED_APPS[ 'todo_list',]	// here put the appname
+		     Templates[ DIR['templates']]
+
+3. go to todo_list-> urls 	// here define urls
+4. go to todo_list->views	// here business logic and rendering be performed
+5. go to todo_list->templates	// here html files will be created
+		
